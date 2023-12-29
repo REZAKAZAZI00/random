@@ -4,37 +4,35 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace random
 {
-    public partial class MultiplicativeMiddleMethod : Form
+    public partial class ConstantMultiplicationMethod : Form
     {
-        public MultiplicativeMiddleMethod()
+        public ConstantMultiplicationMethod()
         {
             InitializeComponent();
         }
 
         private void btncalc_Click(object sender, EventArgs e)
         {
-
-            var x = txt_x.Text;
-            var xPrime = txt_xPrime.Text;
-
-            var count = Convert.ToInt32(num_count.Value);
-
+            var k=txt_k.Text;
+            var x=txt_x.Text;
+            var count= Convert.ToInt32(num_count.Value);
 
             DataView.Columns.Clear();
             DataView.Rows.Clear();
 
             DataView.Columns.Add("Xi", "Xi");
             DataView.Columns.Add("Ri", "Ri");
-            var randomNumberGenerator = new Servies.MultiplicativeMiddleMethod(xPrime,x);
-            for (int i = 0; i < count; i++)
+            var ConstantMultiplicationMethod = new  Servies.ConstantMultiplicationMethod(k,x);
+            for (int i=0; i<count; i++) 
             {
-                var xi = randomNumberGenerator.Next();
+                var xi = ConstantMultiplicationMethod.Next();
 
                 var ri = xi.ToString();
 
@@ -42,18 +40,17 @@ namespace random
 
                 ri = ri.Replace(".", "");
                 DataView.Rows.Add(xi, ri);
-
-
             }
-
-
         }
 
-
+        private void ConstantMultiplicationMethod_Load(object sender, EventArgs e)
+        {
+            btncalc.Enabled = false;
+        }
         private void CheckInputFields()
         {
             if (!string.IsNullOrEmpty(txt_x.Text) &&
-                !string.IsNullOrEmpty(txt_xPrime.Text) &&
+                !string.IsNullOrEmpty(txt_k.Text) &&
                 (num_count.Value != null&&num_count.Value!=0)
                 )
             {
@@ -65,22 +62,17 @@ namespace random
             }
         }
 
-        private void MultiplicativeMiddleMethod_Load(object sender, EventArgs e)
-        {
-            btncalc.Enabled = false;
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            CheckInputFields();
-        }
-
         private void txt_x_TextChanged(object sender, EventArgs e)
         {
             CheckInputFields();
         }
 
-        private void txt_xPrime_TextChanged(object sender, EventArgs e)
+        private void txt_k_TextChanged(object sender, EventArgs e)
+        {
+            CheckInputFields();
+        }
+
+        private void num_count_ValueChanged(object sender, EventArgs e)
         {
             CheckInputFields();
         }
