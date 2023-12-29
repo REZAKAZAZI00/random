@@ -31,7 +31,7 @@ namespace random
 
             DataView.Columns.Add("Xi", "Xi");
             DataView.Columns.Add("Ri", "Ri");
-            var randomNumberGenerator = new Servies.MultiplicativeMiddleMethod(xPrime,x);
+            var randomNumberGenerator = new Servies.MultiplicativeMiddleMethod(xPrime, x);
             for (int i = 0; i < count; i++)
             {
                 var xi = randomNumberGenerator.Next();
@@ -54,7 +54,7 @@ namespace random
         {
             if (!string.IsNullOrEmpty(txt_x.Text) &&
                 !string.IsNullOrEmpty(txt_xPrime.Text) &&
-                (num_count.Value != null&&num_count.Value!=0)
+                (num_count.Value != null && num_count.Value != 0)
                 )
             {
                 btncalc.Enabled = true;
@@ -83,6 +83,13 @@ namespace random
         private void txt_xPrime_TextChanged(object sender, EventArgs e)
         {
             CheckInputFields();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+            Hide();
         }
     }
 }

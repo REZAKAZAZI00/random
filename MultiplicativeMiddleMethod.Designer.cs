@@ -34,6 +34,7 @@
             txt_x = new TextBox();
             num_count = new NumericUpDown();
             label1 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)DataView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)num_count).BeginInit();
             SuspendLayout();
@@ -100,11 +101,22 @@
             label1.TabIndex = 7;
             label1.Text = "روش میان ضربی";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(160, 20);
+            label3.TabIndex = 23;
+            label3.Text = "بارگشت به صفحه اصلی";
+            label3.Click += label3_Click;
+            // 
             // MultiplicativeMiddleMethod
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(num_count);
             Controls.Add(txt_xPrime);
@@ -128,5 +140,6 @@
         private TextBox txt_x;
         private NumericUpDown num_count;
         private Label label1;
+        private Label label3;
     }
 }

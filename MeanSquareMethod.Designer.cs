@@ -33,6 +33,7 @@
             label1 = new Label();
             txt_n = new TextBox();
             txt_count = new TextBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)DataView).BeginInit();
             SuspendLayout();
             // 
@@ -90,11 +91,22 @@
             txt_count.TextAlign = HorizontalAlignment.Center;
             txt_count.TextChanged += txt_count_TextChanged;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(160, 20);
+            label3.TabIndex = 23;
+            label3.Text = "بارگشت به صفحه اصلی";
+            label3.Click += label3_Click;
+            // 
             // MeanSquareMethod
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label3);
             Controls.Add(txt_count);
             Controls.Add(txt_n);
             Controls.Add(label1);
@@ -115,5 +127,6 @@
         private Label label1;
         private TextBox txt_n;
         private TextBox txt_count;
+        private Label label3;
     }
 }

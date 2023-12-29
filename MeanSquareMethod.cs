@@ -37,7 +37,7 @@ namespace random
                 x = x.TrimStart('0');
 
                 x = x.Replace(".", "");
-                DataView.Rows.Add(xi,x);
+                DataView.Rows.Add(xi, x);
             }
 
         }
@@ -73,6 +73,13 @@ namespace random
         private void txt_count_TextChanged(object sender, EventArgs e)
         {
             CheckInputFields();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+            Hide();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace random
         [STAThread]
         static void Main()
         {
-            Application.Run(new ConstantMultiplicationMethod());
+            Application.Run(new MainForm());
         }
     }
 }

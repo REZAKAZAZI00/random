@@ -32,9 +32,9 @@ namespace random
             int a = Convert.ToInt32(txt_a.Text);
             int c = Convert.ToInt32(txt_c.Text);
             int m = Convert.ToInt32(txt_m.Text);
-    
+
             int count = Convert.ToInt32(txt_count.Text);
-           
+
             DataView.Columns.Clear();
             DataView.Rows.Clear();
 
@@ -110,6 +110,13 @@ namespace random
         {
             CheckInputFields();
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+            Hide();
         }
     }
 }

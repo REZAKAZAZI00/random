@@ -36,6 +36,7 @@
             label1 = new Label();
             txt_count = new TextBox();
             DataView = new DataGridView();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)DataView).BeginInit();
             SuspendLayout();
             // 
@@ -133,11 +134,22 @@
             DataView.TabIndex = 7;
             DataView.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // Form2
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 19);
+            label3.Name = "label3";
+            label3.Size = new Size(160, 20);
+            label3.TabIndex = 23;
+            label3.Text = "بارگشت به صفحه اصلی";
+            label3.Click += label3_Click;
+            // 
+            // LinearCongruentialGenerator
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 451);
+            Controls.Add(label3);
             Controls.Add(DataView);
             Controls.Add(txt_count);
             Controls.Add(label1);
@@ -146,7 +158,7 @@
             Controls.Add(txt_a);
             Controls.Add(txt_x);
             Controls.Add(btncalc);
-            Name = "Form2";
+            Name = "LinearCongruentialGenerator";
             Text = "Form2";
             Load += Form2_Load;
             ((System.ComponentModel.ISupportInitialize)DataView).EndInit();
@@ -164,5 +176,6 @@
         private Label label1;
         private TextBox txt_count;
         private DataGridView DataView;
+        private Label label3;
     }
 }

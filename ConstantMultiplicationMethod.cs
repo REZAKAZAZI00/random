@@ -20,17 +20,17 @@ namespace random
 
         private void btncalc_Click(object sender, EventArgs e)
         {
-            var k=txt_k.Text;
-            var x=txt_x.Text;
-            var count= Convert.ToInt32(num_count.Value);
+            var k = txt_k.Text;
+            var x = txt_x.Text;
+            var count = Convert.ToInt32(num_count.Value);
 
             DataView.Columns.Clear();
             DataView.Rows.Clear();
 
             DataView.Columns.Add("Xi", "Xi");
             DataView.Columns.Add("Ri", "Ri");
-            var ConstantMultiplicationMethod = new  Servies.ConstantMultiplicationMethod(k,x);
-            for (int i=0; i<count; i++) 
+            var ConstantMultiplicationMethod = new Servies.ConstantMultiplicationMethod(k, x);
+            for (int i = 0; i < count; i++)
             {
                 var xi = ConstantMultiplicationMethod.Next();
 
@@ -51,7 +51,7 @@ namespace random
         {
             if (!string.IsNullOrEmpty(txt_x.Text) &&
                 !string.IsNullOrEmpty(txt_k.Text) &&
-                (num_count.Value != null&&num_count.Value!=0)
+                (num_count.Value != null && num_count.Value != 0)
                 )
             {
                 btncalc.Enabled = true;
@@ -75,6 +75,13 @@ namespace random
         private void num_count_ValueChanged(object sender, EventArgs e)
         {
             CheckInputFields();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+            Hide();
         }
     }
 }

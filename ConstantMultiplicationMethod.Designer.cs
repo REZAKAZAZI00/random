@@ -34,6 +34,7 @@
             txt_x = new TextBox();
             btncalc = new Button();
             DataView = new DataGridView();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)num_count).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DataView).BeginInit();
             SuspendLayout();
@@ -100,11 +101,22 @@
             DataView.Size = new Size(341, 330);
             DataView.TabIndex = 8;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(160, 20);
+            label3.TabIndex = 23;
+            label3.Text = "بارگشت به صفحه اصلی";
+            label3.Click += label3_Click;
+            // 
             // ConstantMultiplicationMethod
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(num_count);
             Controls.Add(txt_k);
@@ -128,5 +140,6 @@
         private TextBox txt_x;
         private Button btncalc;
         private DataGridView DataView;
+        private Label label3;
     }
 }
